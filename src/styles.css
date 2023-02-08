@@ -1,7 +1,9 @@
 :root, body {
     width: 100%;
     height: 100%;
+    font-family: 'Poppins';
 }
+
 .grid-container {
     width: 100%;
     height: 100%;
@@ -9,6 +11,7 @@
     grid-template-rows: 7% 93%;
     grid-template-columns: 15% 85%;
 }
+
 .header {
     display: flex;
     align-items: center;
@@ -19,6 +22,7 @@
     box-shadow: 0px 0px 15px 5px rgb(1, 86, 255);
     z-index: 2;
 }
+
 .logo {
     display: flex;
     align-items: center;
@@ -32,27 +36,32 @@
 .logo-text {
     font-size: 24px;
 }
-#clock {
+
+#leftWrap{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
     color: white;
-    font-family: 'Poppins';
-    font-weight: 400;
     padding-right: 20px;
 }
+#clock {
+    color: white;
+}
+
 .sidebar {
     z-index: 0;
     grid-row: 2/3;
     grid-column: 1/2;
     background-color: #dcdcdc;
 }
+
 .bookmark-header {
-    font-family: 'Poppins';
     font-size: 24px;
     color: grey;
     font-weight: 200;
     padding: 25px 0px 0px 15px;
 }
 .bookmark-container {
-    font-family: 'Poppins';
     font-weight: 200;
     color: rgb(115, 115, 115);
     display: flex;
@@ -62,7 +71,6 @@
     padding-left: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: 'Poppins';
     font-size: 15px;
     font-weight: 200;
     border: none;
@@ -75,9 +83,18 @@
     transition: background-color 500ms ease-in-out;
     background-color: rgb(191, 191, 191);
 }
+
 .content {
     z-index: 1;
     box-shadow: -1px 0px 10px 0px gray;
     grid-row: 2/3;
     grid-column: 2/3;
+}
+
+.hide {
+    opacity: 0%;
+}
+.reveal {
+    transition: opacity 200ms ease-in-out;
+    opacity: 100%;
 }
