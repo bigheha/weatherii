@@ -19,10 +19,9 @@ navigator.geolocation.getCurrentPosition(async (position) => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${weatherKey}`, {mode:'cors'});
     const info = await response.json();
 
-    const cityResponse = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${weatherKey}`);
-    console.log(cityResponse)
+    const cityResponse = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${weatherKey}`, {mode:'cors'});
     const cityName = await cityResponse.json();
-    console.log(cityName);
+
     document.getElementById('localWeather').innerText = `${cityName[0].name} ${info.main.temp}°C ${info.main.humidity}%`;
     document.getElementById('localWeather').classList.toggle('hide');
     document.getElementById('localWeather').classList.toggle('reveal');
