@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Weatherii</title>
     <script src="main.js" defer></script> 
 </head>
 <body>
@@ -30,26 +31,42 @@
                 <button class="bookmark">bookmark 3</button>
             </div>
         </div>
-        <div class="content">
-            <div id="city">Ternopil</div>
+        <div id="content" class="hide">
+            <div id="cityName"></div>
             <div class="general">
                 <span class="headline">main info</span>
                 <div>
-                    <label id="temp">air temepature</label>
-                    <div id="temp" class="accented">39.6°C</div>    
+                    <label for="temp">air temepature</label>
+                    <div id="temp" class="accented"></div>    
                 </div>
                 <div>
                     <label for="humidy">humidity</label>
-                    <div id="humidity" class="accented">80%</div>    
+                    <div id="humidity" class="accented"></div>    
                 </div>
                 <div>
                     <label for="pressure">pressure</label>
-                    <div id="pressure" class="accented">hPa</div>
+                    <div id="pressure" class="accented"></div>
                 </div>
             </div>
             <div class="wind">
                 <span class="headline">Wind</span>
+                <div>
+                    <label for="speed">speed</label>
+                    <div id="speed" class="accented"></div>
+                </div>
+                <div>
+                    <label for="direction">direction</label>
+                    <div id="direction" class="accented"></div>
+                </div>
+                <div>
+                    <label for="gust">gust</label>
+                    <div id="gust" class="accented"></div>
+                </div>
             </div>
+            <form id="weather-search">
+                <input id="searchbar"type="text" placeholder="Type in a city name to see how's the weather there">
+                <input id="searchButton" type="submit" value="search">
+            </form>
         </div>
    </div> 
 </body>
