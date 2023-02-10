@@ -2,8 +2,11 @@
     width: 100%;
     height: 100%;
     font-family: 'Poppins';
+    font-size: 10px;
 }
-
+:root {
+    opacity: 0%;
+}
 .grid-container {
     width: 100%;
     height: 100%;
@@ -34,11 +37,12 @@
     width: 40px;
 }
 .logo-text {
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 
 #leftWrap{
     display: flex;
+    font-size: 1.6rem;
     width: 15%;
     justify-content: space-between;
     color: white;
@@ -56,7 +60,7 @@
 }
 
 .bookmark-header {
-    font-size: 24px;
+    font-size: 2.4rem;
     color: grey;
     font-weight: 200;
     padding: 25px 0px 0px 15px;
@@ -71,7 +75,7 @@
     padding-left: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: 200;
     border: none;
     color: rgb(98, 98, 98);;
@@ -91,10 +95,35 @@
     grid-column: 2/3;
 }
 
+.general {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgreen;
+    font-size: 1.6rem;
+    gap: 1.4rem;
+    padding: 1rem;
+}
+
+.wind{
+    background-color: lightblue;
+    padding: 1rem;
+}
+.headline{
+    font-size: 3.6rem;
+}
+.accented{
+    font-size: 2.6rem;
+}
+#city {
+    margin: 20px;
+    text-align: center;
+    font-size: 2.6rem;
+}
+
 .hide {
     opacity: 0%;
 }
 .reveal {
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
     opacity: 100%;
 }
