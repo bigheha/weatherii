@@ -1,6 +1,11 @@
 export default async function getWeater(city) {
-    document.getElementById('content').classList.toggle('reveal');
-    document.getElementById('content').classList.toggle('hide');
+    if (!document.getElementById('info-wrapper').hasAttribute('data-state')) {
+        document.getElementById('info-wrapper').setAttribute('data-state', 'initialized');
+        document.getElementById('info-wrapper').classList.toggle('reveal');
+        document.getElementById('info-wrapper').classList.toggle('hide');
+    }
+    document.getElementById('info-wrapper').classList.toggle('reveal');
+    document.getElementById('info-wrapper').classList.toggle('hide');
 
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=8c705e01d56c4755ae5c8cb11ada00b5`, {mode:'cors'});
     const info = await response.json();
@@ -18,7 +23,7 @@ export default async function getWeater(city) {
     }, 400);
 
     setTimeout(() => {
-        document.getElementById('content').classList.toggle('reveal');
-        document.getElementById('content').classList.toggle('hide');
+        document.getElementById('info-wrapper').classList.toggle('reveal');
+        document.getElementById('info-wrapper').classList.toggle('hide');
     }, 500); 
 }

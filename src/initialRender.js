@@ -30,7 +30,10 @@ export default function initialRender() {
         document.getElementById('direction').innerText = `${info.wind.deg}°`;
         document.getElementById('gust').innerText = `${info.wind.gust}m/s`;
 
-        document.getElementById('content').classList.toggle('hide');
-        document.getElementById('content').classList.toggle('reveal');
+        if (!document.getElementById('info-wrapper').hasAttribute('data-state')) {
+            document.getElementById('info-wrapper').setAttribute('data-state', 'initialized');
+        };
+        document.getElementById('info-wrapper').classList.toggle('hide');
+        document.getElementById('info-wrapper').classList.toggle('reveal');
     })
 }
