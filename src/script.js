@@ -15,9 +15,10 @@ searchWeatherform.addEventListener('submit', (e) => {
     const city = document.getElementById('searchbar').value;
     getWeater(city);
 })
-async function what(){
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=8c705e01d56c4755ae5c8cb11ada00b5`, {mode:'cors'});
-    const info = await response.json();
-    console.log(info);
-}
-what();
+
+const bookmarks =  document.querySelectorAll('.bookmark');
+
+bookmarks.forEach(bookmark => bookmark.addEventListener('click', (e) => {
+    const city = e.target.innerText;
+    getWeater(city);
+}));
