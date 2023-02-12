@@ -21,18 +21,30 @@ function renderBookmarks() {
     const bookmarksContainer = document.querySelector('.bookmark-container');
     while(bookmarksContainer.firstChild) {
         bookmarksContainer.removeChild(bookmarksContainer.firstChild);
-        console.log('deleting');
     };
 
     for (const bookmarkedCity of bookmarks) {
-        console.log('creating buttons');
         const cityButton = document.createElement('button');
         cityButton.classList.add('bookmark');
         cityButton.innerText = bookmarkedCity;
-        cityButton.addEventListener('click', (e) => {
+        cityButton.addEventListener('click', 
+        (e) => {
             const city = e.target.innerText;
             getWeater(city);
         });
+        const deleteBtn = document.createElement('img');
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.setAttribute('src', 'images/delete.svg');
+        deleteBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+            const newBookmarks = bookmarks.filter(bookmark => {
+                return bookmark !== e.target.parentElement.innerText
+            });
+            localStorage.setItem('bookmarks', JSON.stringify(newBookmarks));
+            renderBookmarks();
+        })
+        cityButton.appendChild(deleteBtn);
         bookmarksContainer.appendChild(cityButton);
     }
 }

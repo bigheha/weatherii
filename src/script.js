@@ -7,7 +7,7 @@ import { addBookmark, renderBookmarks } from './bookmarksLogic';
 
 setTimeout(function(){document.querySelector('html').classList.toggle('reveal')}, 1000);
 
-// renderBookmarks();
+renderBookmarks();
 setTime();
 initialRender();
 
