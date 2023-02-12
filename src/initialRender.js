@@ -6,7 +6,6 @@ export default function initialRender() {
     navigator.geolocation.getCurrentPosition(async (position) => {
         lat = await position.coords.latitude;
         lon = await position.coords.longitude;
-        console.log(lat, lon);
     
         const infoPromise = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${weatherKey}`, {mode:'cors'});
         const cityPromise = fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${weatherKey}`, {mode:'cors'});

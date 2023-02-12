@@ -7,14 +7,15 @@
 :root {
     opacity: 0%;
 }
+/* wrapper for whole page */
 .grid-container {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 7% 93%;
-    grid-template-columns: 15% 85%;
+    grid-template-rows: 7% max(93%, 650px);
+    grid-template-columns: max(15%, 150px) 85%;
 }
-
+/* css for header section */
 .header {
     display: flex;
     align-items: center;
@@ -22,48 +23,47 @@
     grid-row: 1/2;
     grid-column: 1/3;
     background-color: blue;
-    box-shadow: 0px 0px 15px 5px rgb(1, 86, 255);
+    box-shadow: 0rem 0rem 1.5rem 0.5rem rgb(1, 86, 255);
     z-index: 2;
 }
-
+/* css for logo part of header */
 .logo {
     display: flex;
     align-items: center;
     color: white;
-    padding-left: 10px;
+    padding-left: 1rem;
 }
-.logo-svg {
-    margin: 5px;
-    width: 40px;
+#logo-svg {
+    margin: 0.5rem;
+    width: 4rem;
 }
 .logo-text {
     font-size: 2.4rem;
 }
-
+/* for timer and information on user's location (in header) */
 #leftWrap{
     display: flex;
     font-size: 1.6rem;
-    width: 15%;
+    width: 23rem;
     justify-content: space-between;
     color: white;
-    padding-right: 20px;
+    padding-right: 2rem;
 }
 #clock {
     color: white;
 }
-
+/* css for sidebar */
 .sidebar {
     z-index: 0;
     grid-row: 2/3;
     grid-column: 1/2;
     background-color: #dcdcdc;
 }
-
 .bookmark-header {
     font-size: 2.4rem;
     color: grey;
     font-weight: 200;
-    padding: 25px 0px 0px 15px;
+    padding: 2.5rem 0rem 0rem 1.5rem;
 }
 .bookmark-container {
     font-weight: 200;
@@ -72,10 +72,12 @@
     flex-direction: column;
 }
 .bookmark {
-    padding-left: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    display: flex;
+    padding-left: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     font-size: 1.5rem;
+    justify-content: space-between;
     font-weight: 200;
     border: none;
     color: rgb(98, 98, 98);;
@@ -87,22 +89,24 @@
     transition: background-color 500ms ease-in-out;
     background-color: rgb(191, 191, 191);
 }
-
+/* css for content section */
 #content {
     display: flex;
     flex-direction: column;
     z-index: 1;
-    box-shadow: -1px 0px 10px 0px gray;
+    box-shadow: -0.1rem 0rem 1rem 0rem gray;
     grid-row: 2/3;
     grid-column: 2/3;
 }
-
-#cityName {
-    margin: 20px;
-    text-align: center;
-    font-size: 2.6rem;
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
 }
-
+#info-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .general {
     display: flex;
     flex-direction: column;
@@ -111,7 +115,16 @@
     gap: 1.4rem;
     padding: 1rem;
 }
-
+#cityName {
+    margin: 2rem;
+    text-align: center;
+    font-size: 2.6rem;
+    margin: 2rem 0rem;
+}
+#add-svg {
+    width: 2.5rem;
+    padding: 0.5rem;
+}
 .wind{
     display: flex;
     flex-direction: column;
@@ -120,7 +133,7 @@
     gap: 1.4rem;
     padding: 1rem;
 }
-
+/* styles for search form at the bottom of page */
 #weather-search {
     padding: 1rem;
     display: flex;
@@ -143,13 +156,14 @@
     padding: 0.7rem 1.2rem;
     border-radius: 1rem;
 }
-
+/* used to change fonts in info-wrapper*/
 .headline{
     font-size: 3.6rem;
 }
 .accented{
     font-size: 2.6rem;
 }
+/* used for fade-in and fade-out effect */
 .hide {
     transition: opacity 500ms ease-in-out;
     opacity: 0%;
