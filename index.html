@@ -16,7 +16,7 @@
     <div class="grid-container">
         <div class="header">
             <div class="logo">
-                <img src="images/tiny-gross-cloud-svgrepo-com.svg" class="logo-svg">
+                <img src="images/tiny-gross-cloud-svgrepo-com.svg" id="logo-svg">
                 <span class="logo-text">Weatherii</span>
             </div>
             <div id="leftWrap">
@@ -25,15 +25,16 @@
         </div>
         <div class="sidebar">
             <p class="bookmark-header">Bookmarks</p>
-            <div class="bookmark-container">
-                <button class="bookmark">London</button>
-                <button class="bookmark">Paris</button>
-                <button class="bookmark">Detroit</button>
+            <div class="bookmark-container">                    
+                    <button class="bookmark">city <img src="images/delete-svgrepo-com.svg" style="width: 20px; padding: 0px;"></button>
             </div>
         </div>
         <div id="content">
             <div id="info-wrapper" class="hide">
-                <div id="cityName"></div>
+                <div id="info-header">
+                    <span id="cityName"></span>
+                    <img src="images/add-icon-passive.svg" id="add-svg">
+                </div>
                 <div class="general">
                     <span class="headline">main info</span>
                     <div>
