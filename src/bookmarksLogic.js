@@ -43,7 +43,7 @@ function renderBookmarks() {
             });
             localStorage.setItem('bookmarks', JSON.stringify(newBookmarks));
             renderBookmarks();
-        })
+        });
         cityButton.appendChild(deleteBtn);
         bookmarksContainer.appendChild(cityButton);
     }

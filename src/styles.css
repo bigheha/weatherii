@@ -8,11 +8,11 @@
     opacity: 0%;
 }
 /* wrapper for whole page */
-.grid-container {
+.display-container {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 7% max(93%, 650px);
+    grid-template-rows: 7% 93%;
     grid-template-columns: max(15%, 150px) 85%;
 }
 /* css for header section */
@@ -172,4 +172,24 @@
 .reveal {
     transition: opacity 500ms ease-in-out;
     opacity: 100%;
+}
+
+@media (max-width: 500px) {
+    .display-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    #logo-svg {
+        width: 3rem;
+    }
+    .logo-text {
+        font-size: 1.8rem;
+    }
+    #content {
+        height: 100%;
+        align-self: stretch;
+    }
+    
+
 }
